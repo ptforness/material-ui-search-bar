@@ -179,16 +179,20 @@ class SearchBar extends Component {
 }
 
 SearchBar.defaultProps = {
+  cancelButtonInputProps: {},
   className: '',
   closeIcon: <ClearIcon style={{ color: grey[500] }} />,
   disabled: false,
   placeholder: 'Search',
+  searchButtonInputProps: {},
   searchIcon: <SearchIcon style={{ color: grey[500] }} />,
   style: null,
   value: ''
 }
 
 SearchBar.propTypes = {
+  /** Props to pass to the cancel IconButton */
+  cancelButtonInputProps: PropTypes.object,
   /** Whether to clear search on escape */
   cancelOnEscape: PropTypes.bool,
   /** Override or extend the styles applied to the component. */
@@ -207,6 +211,8 @@ SearchBar.propTypes = {
   onRequestSearch: PropTypes.func,
   /** Sets placeholder text for the embedded text field. */
   placeholder: PropTypes.string,
+  /** Props to pass to the search IconButton */
+  searchButtonInputProps: PropTypes.object,
   /** Override the search icon. */
   searchIcon: PropTypes.node,
   /** Override the inline-styles of the root element. */
