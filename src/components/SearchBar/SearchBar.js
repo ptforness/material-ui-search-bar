@@ -110,6 +110,7 @@ class SearchBar extends Component {
   render () {
     const { value } = this.state
     const {
+      cancelButtonInputProps,
       cancelOnEscape,
       className,
       classes,
@@ -117,6 +118,7 @@ class SearchBar extends Component {
       disabled,
       onCancelSearch,
       onRequestSearch,
+      searchButtonInputProps,
       searchIcon,
       style,
       ...inputProps
@@ -142,6 +144,7 @@ class SearchBar extends Component {
           />
         </div>
         <IconButton
+          {...searchButtonInputProps}
           onClick={onRequestSearch}
           classes={{
             root: classNames(classes.iconButton, classes.searchIconButton, {
@@ -156,6 +159,7 @@ class SearchBar extends Component {
           })}
         </IconButton>
         <IconButton
+          {...cancelButtonInputProps}
           onClick={this.handleCancel}
           classes={{
             root: classNames(classes.iconButton, {
