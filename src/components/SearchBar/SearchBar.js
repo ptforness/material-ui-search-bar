@@ -53,6 +53,7 @@ const styles = (theme) => ({
 const SearchBar = React.forwardRef(
   (
     {
+      cancelButtonInputProps,
       cancelOnEscape,
       className,
       classes,
@@ -60,6 +61,7 @@ const SearchBar = React.forwardRef(
       disabled,
       onCancelSearch,
       onRequestSearch,
+      searchButtonInputProps,
       searchIcon,
       style,
       ...inputProps
@@ -159,6 +161,7 @@ const SearchBar = React.forwardRef(
           />
         </div>
         <IconButton
+          {...searchButtonInputProps}
           onClick={handleRequestSearch}
           className={classNames(classes.iconButton, classes.searchIconButton, {
             [classes.iconButtonHidden]: value !== "",
@@ -170,6 +173,7 @@ const SearchBar = React.forwardRef(
           })}
         </IconButton>
         <IconButton
+          {...cancelButtonInputProps}
           onClick={handleCancel}
           className={classNames(classes.iconButton, {
             [classes.iconButtonHidden]: value === "",
