@@ -4,6 +4,9 @@
   "description": "Material style search bar",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "engines": {
+    "node": "14.21.3"
+  },
   "scripts": {
     "build": "babel src -d lib --copy-files",
     "prepare": "babel src -d lib --copy-files",
